@@ -21,6 +21,10 @@ class MineTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(search : Search) {
+        
+    }
+    
 }
 extension MineTableViewCell {
     static var identifier: String {

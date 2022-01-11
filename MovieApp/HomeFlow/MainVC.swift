@@ -12,19 +12,30 @@ class MainVC: UIViewController {
     var viewModel : MainVMDelegate = MainVM()
     
     @IBOutlet weak var MyTableView: UITableView!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.getServiceData()
         MyTableView.delegate = self
         MyTableView.dataSource = self
         MyTableView.register(MineTableViewCell.nibName, forCellReuseIdentifier: MineTableViewCell.identifier) // Bunlar good
     }
+    @IBAction func searchButtonClicked(_ sender: Any) {
+        var searchText = searchBar.text
+        viewModel.getServiceData(searchText: searchText ?? "")
+    }
 }
 
 extension MainVC : MainVMDelegateOutputs {
-  
+   
+    func emptySearch(anyResult: Bool) {
+        title = "Bos arama"
+        // resim.isHiddn = sonucVarMi
+    }
+    
     func reloadTableView() {
         MyTableView.reloadData() // delegate geldiğinde refresh
     }
