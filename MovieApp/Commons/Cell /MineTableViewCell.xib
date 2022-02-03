@@ -84,7 +84,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="label" destination="dXs-oQ-ox5" id="6gv-7Z-rbf"/>
+                <outlet property="imagePoster" destination="zsh-XP-FgV" id="Y49-OQ-odk"/>
+                <outlet property="title" destination="dXs-oQ-ox5" id="0EN-if-XZQ"/>
+                <outlet property="typeMovie" destination="M8i-O4-tst" id="dby-jh-myr"/>
+                <outlet property="year" destination="mh6-kL-Zqx" id="DtU-Ds-yBF"/>
             </connections>
             <point key="canvasLocation" x="252.17391304347828" y="131.58482142857142"/>
         </tableViewCell>

@@ -8,13 +8,16 @@
 import UIKit
 
 class MineTableViewCell: UITableViewCell {
-
+   
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var year: UILabel!
+    @IBOutlet weak var typeMovie: UILabel!
+    @IBOutlet weak var imagePoster: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    @IBOutlet weak var label: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -22,7 +25,10 @@ class MineTableViewCell: UITableViewCell {
     }
     
     func configure(search : Search) {
-        
+        self.title.text = search.title
+        self.year.text = search.year
+        self.typeMovie.text = search.type.rawValue
+        self.imagePoster.downloaded(from: search.poster)
     }
     
 }
